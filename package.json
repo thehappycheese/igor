@@ -1,0 +1,96 @@
+{
+  "name": "engineernick-vendored",
+  "publisher":"engineernick",
+  "private": true,
+  "displayName": "engineernick-vendored",
+  "description": "Attempt to vendor a few useful extensions into a single extension. Not intended to be published on the marketplace.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onLanguage:rmd",
+    "onLanguage:quarto",
+    "workspaceContains:readme.md"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+        "type": "object",
+        "title": "Reflow Markdown configuration - Vendored By EngineerNick",
+        "properties": {
+          "reflowMarkdown-ven.preferredLineLength": {
+            "type": "number",
+            "default": 80,
+            "description": "Preferred line length for reflowed lines.",
+            "minimum": 0
+          },
+          "reflowMarkdown-ven.doubleSpaceBetweenSentences": {
+            "type": "boolean",
+            "default": false,
+            "description": "Insert two spaces instead of one between each sentence."
+          },
+          "reflowMarkdown-ven.resizeHeaderDashLines": {
+            "type": "boolean",
+            "default": false,
+            "description": "The dashes and equal signs under headers will be re-written to be the same length as the header text."
+          },
+          "reflowMarkdown-ven.wrapLongLinks": {
+            "type": "string",
+            "default": "wrap",
+            "description": "Specifies how links will be wrapped when they in the middle of a line and cause it to extend beyond the preferred length.",
+            "enum": [
+              "wrap",
+              "doNotWrap"
+            ],
+            "enumDescriptions": [
+              "The link text and the link url are started on the next line, which itself may be longer than the preferrd length.",
+              "The link text and the link url are kept on the current line, resulting in it being longer than the preferred length."
+            ]
+          }
+        }
+      },
+      "commands": [
+        {
+          "command": "extension.reflowMarkdown-ven",
+          "title": "Reflow Markdown"
+        }
+      ],
+      "keybindings": [
+        {
+          "command": "extension.reflowMarkdown-ven",
+          "key": "alt+q",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.91.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
