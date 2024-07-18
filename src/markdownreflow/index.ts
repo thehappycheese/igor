@@ -16,7 +16,7 @@ export function reflow() {
         return; // No open text editor
     }
 
-    let settings = getSettings(vscode.workspace.getConfiguration("reflowMarkdown-ven"));
+    let settings = getSettings(vscode.workspace.getConfiguration("igor-reflowMarkdown"));
 
     const selection = editor.selection;
     const position = editor.selection.active;
@@ -40,7 +40,7 @@ export function reflow() {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-    let disposable = vscode.commands.registerCommand("extension.reflowMarkdown-ven", reflow);
+    let disposable = vscode.commands.registerCommand("extension.igor-reflowMarkdown", reflow);
     context.subscriptions.push(disposable);
 }
 
@@ -61,5 +61,4 @@ export function GetStartEndInfo(editor: vscode.TextEditor): StartEndInfo {
         lineEnd: e.lineNumber,
         otherInfo: o
     };
-
 }

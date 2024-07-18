@@ -1,10 +1,10 @@
 {
-  "name": "engineernick-vendored",
+  "name": "engineernick-igor",
   "publisher":"engineernick",
   "private": true,
-  "displayName": "engineernick-vendored",
+  "displayName": "Igor",
   "description": "Attempt to vendor a few useful extensions into a single extension. Not intended to be published on the marketplace.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.91.0"
   },
@@ -21,25 +21,25 @@
   "contributes": {
     "configuration": {
         "type": "object",
-        "title": "Reflow Markdown configuration - Vendored By EngineerNick",
+        "title": "Igor - Reflow Markdown configuration",
         "properties": {
-          "reflowMarkdown-ven.preferredLineLength": {
+          "igor-reflowMarkdown.preferredLineLength": {
             "type": "number",
             "default": 80,
             "description": "Preferred line length for reflowed lines.",
             "minimum": 0
           },
-          "reflowMarkdown-ven.doubleSpaceBetweenSentences": {
+          "igor-reflowMarkdown.doubleSpaceBetweenSentences": {
             "type": "boolean",
             "default": false,
             "description": "Insert two spaces instead of one between each sentence."
           },
-          "reflowMarkdown-ven.resizeHeaderDashLines": {
+          "igor-reflowMarkdown.resizeHeaderDashLines": {
             "type": "boolean",
             "default": false,
             "description": "The dashes and equal signs under headers will be re-written to be the same length as the header text."
           },
-          "reflowMarkdown-ven.wrapLongLinks": {
+          "igor-reflowMarkdown.wrapLongLinks": {
             "type": "string",
             "default": "wrap",
             "description": "Specifies how links will be wrapped when they in the middle of a line and cause it to extend beyond the preferred length.",
@@ -56,13 +56,13 @@
       },
       "commands": [
         {
-          "command": "extension.reflowMarkdown-ven",
+          "command": "extension.igor-reflowMarkdown",
           "title": "Reflow Markdown"
         }
       ],
       "keybindings": [
         {
-          "command": "extension.reflowMarkdown-ven",
+          "command": "extension.igor-reflowMarkdown",
           "key": "alt+q",
           "when": "editorTextFocus"
         }

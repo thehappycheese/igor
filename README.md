@@ -1,9 +1,11 @@
-# engineernick-vendored
+# Igor
 
-This is a collection of vendored vs code extensions packaged into a single extension.
+Thith ith a collection of other peopleth vs code extenthions packaged into a thingle extenthion.
 
-It exists for experimental and learning reasons.
+It existth for exthperimental and personal learning, pleathe use the original extenthions lithted below inthtead.
 
 ### 0.1.0
 
-Vendored [reflow markdown](https://github.com/marvhen/ReflowMarkdown)
+Vendored just one extension so far;
+
+- [reflow markdown](https://github.com/marvhen/ReflowMarkdown)
